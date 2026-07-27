@@ -1,332 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <title>등촌 유흥 후기 | 블로그 — 리얼리뷰 No.1</title>
-    <meta name="description" content="등촌 유흥의 진짜 리뷰를 한눈에. 형들이 직접 경험하고 쓴 솔직한 후기. 지금 확인하고 등촌 넘버원 유흥 스팟을 찾아라. 전화 예약은 010-6279-0862">
-    <meta name="keywords" content="등촌 유흥, 등촌 유흥 후기, 등촌술집, 등촌유흥주점, 등촌밤문화, 등촌룸싸롱, 등촌가라오케">
-    <link rel="canonical" href="https://t3b06-dc-night-rv-2.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="등촌 유흥 후기 | 리얼리뷰 No.1">
-    <meta property="og:description" content="등촌 유흥의 진짜 리뷰를 한눈에. 형들이 직접 경험하고 쓴 솔직한 후기. 지금 확인하고 등촌 넘버원 유흥 스팟을 찾아라. 전화 예약은 010-6279-0862">
-    <meta property="og:url" content="https://t3b06-dc-night-rv-2.vercel.app/">
-    <meta property="og:site_name" content="등촌유흥리뷰">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        /* Brutalist Avant-Garde — KR Raw Concrete */
-        :root {
-            --bg: #1a1a1a;
-            --text: #e0e0e0;
-            --accent: #ff3b3b;
-            --accent2: #f7d51e;
-            --border: #333;
-            --card-bg: #222;
-            --header-bg: #111;
-            --nav-bg: #0d0d0d;
-            --font-mono: 'Courier New', Courier, monospace;
-            --font-sans: 'Helvetica Neue', Arial, sans-serif;
-            --gutter: 24px;
-            --max-width: 1200px;
-            --brutal-shadow: 6px 6px 0 rgba(255, 59, 59, 0.3);
-        }
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--font-sans);
-            line-height: 1.65;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-        a:hover {
-            color: var(--accent2);
-            text-decoration: underline;
-        }
-        img, video {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        h1, h2, h3, h4 {
-            font-family: var(--font-mono);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 0.5rem; }
-        h2 { font-size: 1.8rem; margin: 2rem 0 1rem; border-left: 6px solid var(--accent); padding-left: 1rem; }
-        h3 { font-size: 1.3rem; margin: 1.5rem 0 0.75rem; }
-        p { margin-bottom: 1.2rem; }
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-        }
-        /* HEADER */
-        .site-header {
-            background: var(--header-bg);
-            border-bottom: 4px solid var(--accent);
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .logo a {
-            font-family: var(--font-mono);
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            text-decoration: none;
-        }
-        .logo a:hover {
-            color: var(--accent2);
-            text-decoration: none;
-        }
-        /* Hamburger menu */
-        .hamburger-menu {
-            display: none;
-            background: none;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 4px 12px;
-            line-height: 1;
-        }
-        .hamburger-menu:hover {
-            background: var(--accent);
-            color: #000;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            font-family: var(--font-mono);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .nav-links a {
-            color: var(--text);
-            padding: 4px 0;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-links a:hover {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-            text-decoration: none;
-        }
-        .nav-links .active a {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-        /* Mobile nav toggle */
-        #nav-toggle {
-            display: none;
-        }
-        #nav-toggle:checked ~ .nav-links {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            background: var(--nav-bg);
-            padding: 1rem 0;
-            border-top: 2px solid var(--accent);
-            margin-top: 12px;
-        }
-        #nav-toggle:checked ~ .nav-links li {
-            text-align: center;
-            padding: 8px 0;
-        }
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                gap: 0;
-            }
-        }
-        /* HERO BLOG */
-        .blog-hero {
-            padding: 4rem 0 2rem;
-            border-bottom: 2px solid var(--accent);
-        }
-        .blog-hero h1 {
-            font-size: 3rem;
-            max-width: 800px;
-        }
-        .blog-hero .meta {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: #999;
-            margin-top: 1rem;
-            border-top: 1px solid var(--border);
-            padding-top: 0.75rem;
-        }
-        /* ARTICLE */
-        .blog-article {
-            padding: 2rem 0 3rem;
-        }
-        .blog-article .content {
-            max-width: 780px;
-            margin: 0 auto;
-        }
-        .blog-article .content blockquote {
-            border-left: 4px solid var(--accent2);
-            padding-left: 1.2rem;
-            margin: 1.8rem 0;
-            font-style: italic;
-            color: #ccc;
-            font-size: 1.1rem;
-        }
-        .blog-article .content .highlight-box {
-            background: var(--card-bg);
-            border: 2px solid var(--accent);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--brutal-shadow);
-        }
-        .blog-article .content .highlight-box strong {
-            color: var(--accent);
-        }
-        .blog-article .content ul, .blog-article .content ol {
-            padding-left: 1.5rem;
-            margin-bottom: 1.2rem;
-        }
-        .blog-article .content li {
-            margin-bottom: 0.5rem;
-        }
-        .cta-section {
-            background: var(--header-bg);
-            border: 2px dashed var(--accent2);
-            padding: 2rem;
-            text-align: center;
-            margin: 2.5rem 0;
-        }
-        .cta-section .cta-phone {
-            font-size: 2.2rem;
-            font-family: var(--font-mono);
-            font-weight: 800;
-            color: var(--accent2);
-            display: block;
-            margin: 0.5rem 0;
-        }
-        .cta-section .cta-phone:hover {
-            color: var(--accent);
-        }
-        /* FOOTER */
-        .site-footer {
-            background: var(--header-bg);
-            border-top: 4px solid var(--accent);
-            padding: 2rem 0;
-            margin-top: auto;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777;
-            font-family: var(--font-mono);
-        }
-        .site-footer a {
-            color: var(--accent);
-        }
-        .site-footer p {
-            margin: 0.3rem 0;
-        }
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.4rem; }
-            .blog-hero h1 { font-size: 2.2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>등촌 유흥 후기 - 블로그</title>
+<meta name="description" content="등촌 유흥 업소를 선택하기 전에 알아야 할 비용 구조와 체크리스트를 정리했습니다. 실제 금액은 문의 후 안내드립니다.">
+<meta name="keywords" content="등촌 유흥 후기, 비용 구조, 선택 기준, 이용 전 확인사항, 조건별 적합성">
+<link rel="canonical" href="https://deungchon-night-trend.link-hub.org/blog.html">
+<meta property="og:title" content="등촌 유흥 후기 — 비용 구조와 선택 기준을 한눈에 파악">
+<meta property="og:description" content="등촌 유흥 업소를 선택하기 전에 알아야 할 비용 구조와 체크리스트를 정리했습니다. 실제 금액은 문의 후 안내드립니다.">
+<meta property="og:url" content="https://deungchon-night-trend.link-hub.org/blog.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="등촌 유흥 후기 — 비용 구조와 선택 기준을 한눈에 파악">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="logo">
-                <a href="/">등촌유흥리뷰</a>
-            </div>
-            <input type="checkbox" id="nav-toggle" hidden>
-            <label for="nav-toggle" class="hamburger-menu" aria-label="메뉴 열기">☰</label>
-            <ul class="nav-links">
-                <li><a href="/">홈</a></li>
-                <li class="active"><a href="/blog/">블로그</a></li>
-                <li><a href="/reviews/">리뷰</a></li>
-                <li><a href="/map/">지도</a></li>
-                <li><a href="/contact/">문의</a></li>
-            </ul>
-        </div>
-    </header>
+<div class="v-side-33x6">
+  <nav>
+    <ul>
+      <li><a href="/">홈</a></li>
+      <li><a href="/review">후기</a></li>
+      <li><a href="/guide">가이드</a></li>
+      <li><a href="/contact">문의</a></li>
+    </ul>
+  </nav>
+</div>
 
-    <main>
-        <section class="blog-hero container">
-            <h1>등촌 유흥 후기: <br>형들이 직접 쓴 진짜 리뷰</h1>
-            <div class="meta">
-                <span>작성: 운영진 · 2025.04.01 · 12분 읽음</span>
-            </div>
-        </section>
+<div class="x-side-vcgu">
+  <span class="r-head-vb8z">등촌 유흥 후기</span>
+</div>
 
-        <article class="blog-article">
-            <div class="container content">
-                <p><strong>등촌 유흥, 형들은 이미 알고 있었다.</strong> 광고로 꾸며진 가짜 후기, 알바가 쓴 칭찬 일색 글에 속아본 적 있나? 여기 등촌 유흥의 리얼리뷰, 그 핵심만 담았다. 기대와 현실 사이에서 널 흔들어줄 이야기, 지금 바로 확인해라.</p>
+<main class="x-side-vcgu">
+  <section>
+    <h2>등촌 유흥, 왜 지금 주목받는가?</h2>
+    <p>등촌은 접근성, 분위기, 그리고 서비스 다양성에서 타 지역과 확연히 차별화되는 특성을 지니고 있다. 도시 중심부와 가깝다는 지리적 이점은 이용객이 이동 시간을 최소화하도록 돕고, 이는 자연스럽게 만족도 상승으로 이어진다. 또한, 최근 들어 새로운 컨셉을 도입한 업소들이 늘어나면서 기존 시장에 신선한 충격을 주고 있다.</p>
+    <p>하지만 이런 장점만으로는 충분하지 않다. 실제 이용 전에는 비용 구조와 서비스 범위, 그리고 상황별 체크리스트를 정확히 파악해야 한다. 이 페이지는 그런 불확실성을 최소화하고, 현명한 선택을 돕기 위해 제작되었다.</p>
+  </section>
 
-                <h2>왜 등촌 유흥인가?</h2>
-                <p>서울 서남권, 등촌동은 유흥의 숨은 성지다. 강남처럼 비싸지 않고, 홍대처럼 애매하지 않다. 여기는 진짜 <strong>일하는 사람들</strong>을 위한 공간이다. 룸싸롱, 가라오케, 유흥주점 — 각각의 스타일과 레벨이 분명하다. 형들이 직접 3년간 발로 뛰며 검증한 스팟만 추렸다.</p>
+  <section>
+    <h2>비용 구조 완전 정복</h2>
+    <p>등촌 유흥 업소의 기본 요금은 “입장료 + 음료·음식 비용” 형태가 대부분이다. 입장료는 시간대와 업소 규모에 따라 차이가 나며, 보통 30분 단위로 책정된다. 이때, 심야 시간대에는 입장료가 상승하는 경우가 많으니 사전에 확인이 필요하다.</p>
+    <p>음료·음식 비용은 선택 메뉴에 따라 크게 달라진다. 기본 안주와 주류 세트가 포함된 패키지는 단가가 낮지만, 별도 주문 시 가격이 상승한다. 특히, 프리미엄 술 종류는 별도 가격표가 존재하므로, 예산을 초과하지 않도록 사전에 메뉴를 검토하는 것이 현명하다.</p>
+    <p>추가 서비스(예: 프라이빗룸, 특별 이벤트)는 별도 협의가 필요하다. 이런 옵션은 사전에 계약서를 통해 명시되며, 비용은 서비스 제공 시간과 인원 규모에 비례한다.</p>
+  </section>
 
-                <div class="highlight-box">
-                    <strong>📞 지금 전화하면 형이 직접 추천한다!</strong><br>
-                    등촌 유흥, 어디 갈지 고민된다면?<br>
-                    번호 하나만 누르면 끝. <span class="cta-phone" style="font-size:1.8rem;">010-6279-0862</span>
-                </div>
+  <section>
+    <h2>업소 선택 기준, 무엇을 우선시 해야 할까?</h2>
+    <p>첫 번째 기준은 “목적”이다. 친구와의 가벼운 모임, 비즈니스 접대, 혹은 특정 이벤트 등 목적에 따라 적합한 업소가 달라진다. 목적에 맞는 분위기와 서비스 제공 여부를 확인하고, 예약 전에는 반드시 현장 사진과 리뷰를 교차 검증한다.</p>
+    <p>두 번째 기준은 “인원 규모 및 시간대”이다. 대규모 그룹은 프라이빗룸 이용이 필수이며, 이는 사전 예약이 요구된다. 반면, 소규모 인원은 일반 라운지를 활용해 비용을 절감할 수 있다. 또한, 피크 타임(주말, 공휴일)에는 예약이 어려울 수 있으므로, 비피크 타임을 활용하는 전략이 유리하다.</p>
+    <p>세 번째 기준은 “안전 및 위생 관리”다. 최근 강화된 방역 지침에 따라 업소마다 위생 인증 마크를 부여하고 있다. 인증 마크가 눈에 보이는 곳을 선택하고, 직원들의 위생 교육 여부를 직접 문의한다.</p>
+  </section>
 
-                <h2>등촌 유흥의 세 가지 유형</h2>
-                <ol>
-                    <li><strong>진짜 룸싸롱:</strong> 마인드 좋은 매니저, 깔끔한 시설. 가격은 좀 나가지만 후회는 없다.</li>
-                    <li><strong>가라오케 퍼펙트:</strong> 음향부터 서비스까지, 노래방을 넘어선 놀이터. 여긴 진심으로 논다.</li>
-                    <li><strong>유흥주점 하드코어:</strong> 술과 분위기의 끝을 보고 싶다면? 조용히 즐기고 싶은 형들에게 추천.</li>
-                </ol>
-                <p><em>“등촌에서 일하는 사람으로서 말한다. 광고보다 실제 후기를 믿어라. 우리 가게는 형들이 직접 경험하고 단골이 된 곳이다.”</em> — 등촌 XX룸 매니저 K</p>
+  <section>
+    <h2>이용 전 체크리스트</h2>
+    <p>① 예약 시점에 “입장료와 최소 음료 주문량”을 명시했는지 확인한다.<br>
+       ② 이용 시간대별 가격 변동이 있는지, 특히 심야 할증 여부를 문의한다.<br>
+       ③ 프라이빗룸 및 추가 서비스 이용 시 별도 계약서가 필요한지 확인한다.</p>
+    <p>④ 위생 인증서와 방역 매뉴얼을 제공받는지 확인한다.<br>
+       ⑤ 결제 방식(선불·후불·현금·카드)을 미리 확인하고, 현금 할인 여부를 체크한다.<br>
+       ⑥ 주변 교통편·주차 시설을 사전에 파악해 이동 불편을 최소화한다.</p>
+  </section>
 
-                <h2>리얼 후기 — 형이 겪은 등촌의 밤</h2>
-                <p>지난주 금요일, 오랜만에 등촌을 찾았다. 첫 번째 방문은 <strong>B급 감성 가득한 가라오케</strong>. 30분 웨이팅 끝에 입장, 맥주 한 잔에 마이크 잡았다. 음향은 깔끔, 분위기는 폭발적. 근데 문제는 계산서? 합리적인 가격에 놀랐다. 두 번째는 <strong>고급 룸싸롱</strong>. 매니저들의 서비스가 진짜 수준급. 술값은 좀 쎄지만, 그만한 값어치를 한다. 마지막으로 <strong>유흥주점</strong> — 여긴 좀 조용하고 아날로그 감성. 혼술하기 좋은 곳이었다.</p>
+  <section>
+    <h2>상황별 팁</h2>
+    <p><strong>인원 2~4명, 짧은 시간 이용</strong> – 기본 안주와 주류 세트만 주문하면 최소 비용으로 즐길 수 있다. 이때는 입장료만 확인하고, 추가 주문은 최소화한다.</p>
+    <p><strong>20명 이상 대규모 모임</strong> – 프라이빗룸을 사전 예약하고, 음료·음식은 미리 패키지로 계약한다. 계약서에 인원 변동 가능 조항을 넣어 두면, 당일 인원 변동에 유연하게 대처할 수 있다.</p>
+    <p><strong>심야 이벤트</strong> – 심야 할증이 적용될 가능성이 높다. 사전에 할증율을 확인하고, 가능하면 조기 입장을 통해 비용을 절감한다. 또한, 심야 전용 안주와 주류는 사전 가격표를 요청한다.</p>
+  </section>
 
-                <blockquote>“등촌 유흥, 솔직히 말해 알바 후기보다 내가 직접 가보는 게 낫다. 형은 이미 3군데 단골이다. 전화 한 통이면 다 해결된다.”</blockquote>
-
-                <h2>등촌 유흥, 이렇게 골라라</h2>
-                <ul>
-                    <li><strong>돈 생각 없다?</strong> → 룸싸롱 스트레이트. VIP 코스 추천.</li>
-                    <li><strong>노래와 술을 동시에?</strong> → 가라오케. 특히 ‘노래방 XX’는 음향이 미쳤다.</li>
-                    <li><strong>조용히 분위기만?</strong> → 유흥주점 ‘밤X’. 저녁 10시 이후가 진국.</li>
-                </ul>
-                <p>각각의 스팟은 모두 <strong>운영진이 직접 검증</strong>한 곳이다. 가짜 후기에 속지 마라. 등촌 유흥의 진짜 매력은 형들이 증명한다.</p>
-
-                <div class="cta-section">
-                    <p style="font-size:1.2rem; font-weight:600;">🔥 지금 당장 등촌 유흥의 진짜를 경험해라</p>
-                    <a href="tel:010-6279-0862" class="cta-phone">010-6279-0862</a>
-                    <p style="margin-top:0.8rem;">전화 한 통으로 예약
+  <section>
+    <h2>FAQ</h2>
+    <p><strong>Q1. 입장료는 언제까지 환불이 가능한가요?</strong><br>
+    A1. 대부분의 업소는 입장 전 24시간 이내에 한해 전액 환불을 제공한다. 단, 입장 직후에는 환불이 불가하니 주의한다.</p>
+    <p><strong>Q2. 최소 음료 주문량은 어떻게 확인하나요?</strong><br>
+    A2. 예약 시점에 최소 주문액(예: 5만원)을 계약서에 명시하도록 요청한다. 이 금액은 테이블당 적용되며, 초과 주문 시 추가 결제만 발생한다.</p>
+    <p><strong>Q3. 프라이빗룸 예약은 어떻게 진행하나요?</strong><br>
+    A3. 전화나 온라인 예약 시스템을 통해 사전 예약을 진행한다. 예약 확정서에 인원 수, 이용 시간, 추가 서비스 옵션을 명시한다.</p>
+    <p><strong>Q4. 현금 결제 시 할인 혜택이 있나요?</strong><br>
+    A4. 일부 업소는 현금 결제 시 5~10% 할인을 제공한다. 예약 단계에서 현금 할인 여부를 반드시 확인한다.</p>
+  </section>
+</main>
 </body>
 </html>
